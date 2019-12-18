@@ -1,0 +1,61 @@
+
+<h1>Register:</h1>
+    
+    <div id="first">
+      <form [formGroup]="newUser" (ngSubmit)="addUser()">
+      <label>ID Number:</label>
+      <input type="text"  placeholder="ID Number"   formControlName="IDnumber">
+      <br>
+      <br>
+      <label>Email:</label>
+      <input type="email"  placeholder="Email"  formControlName="Email">
+      <br>
+      <br>
+      <label>Password:</label>
+      <input type="password"  placeholder="Password"  formControlName="Password">
+      <br>
+      <br>
+      <label>Confirm Password:</label>
+      <input type="password"  placeholder="Confirm Password" >
+      <br>
+      <br>
+      <button [disabled]="!newUser.valid" (click)="toggleShow()">Next</button>
+      <br>
+      <br>
+   
+    
+    <div id="next"  *ngIf="isShown"> 
+      <label>First Name:</label>
+      <input type="text"  placeholder="First Name"  autofocus  formControlName="firstName">
+      <br>
+      <br>
+      <label>Last Name:</label>
+      <input type="text"  placeholder="Last Name"   formControlName="lastName">
+      <br>
+      <br><label>City:</label>
+      <select  placeholder="City"  formControlName="City"> 
+        <option value="Jerusalem">Jerusalem</option>
+        <option value="Tel Aviv">Tel Aviv</option>
+        <option value="Haifa">Haifa</option>
+        <option value="Ashdod">Ashdod</option>
+        <option value="Rishon LeẔiyon">Rishon LeẔiyon</option>  
+        <option value="Beer-Sheva">Beer Sheva</option> 
+        <option value="Petah Tikvah">Petah Tikvah</option> 
+        <option value="Ariel">Ariel</option> 
+        <option value="Eilat">Eilat</option> 
+        <option value="Acco">Acco</option> 
+      </select>
+      <br>
+      <br>
+      <label>Address: </label>
+      <input type="text"  placeholder="Address"  formControlName="Address">
+      <br>
+      <br>
+      <input type="submit" value="Click on Me to Register" routerLink="/store">
+    </div>
+      
+    </form>
+
+    
+
+    <h5>{{newUser.value | json}}</h5>

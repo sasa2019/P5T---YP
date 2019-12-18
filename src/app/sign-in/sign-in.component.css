@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+ 
+  }
+
+  .flex-container > div {
+    
+    margin: 30px;
+    text-align: center;
+    
+   
+  }
+
+  .photo {
+    max-width: 200px;
+  height: 50%;
+  }
